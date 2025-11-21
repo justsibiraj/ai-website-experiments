@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goondas.com - Kattapanchayatu Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #050505;
+            color: #e5e5e5;
+        }
+        
+        h1, h2, h3, .brand-font {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .red-accent {
+            color: #dc2626;
+        }
+
+        .profile-img {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .profile-card:hover .profile-img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        .tool-btn.selected {
+            background-color: #dc2626;
+            color: white;
+            border-color: #dc2626;
+        }
+        
+        /* Custom input styling to match the dark PDF theme */
+        .custom-input {
+            background: transparent;
+            border: 2px solid white;
+            border-radius: 9999px; /* Pill shape */
+            padding: 0.5rem 1.5rem;
+            color: white;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .custom-input:focus {
+            border-color: #dc2626;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="bg-black/90 sticky top-0 z-50 border-b border-red-900/30 backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-wider brand-font text-white hover:text-red-500 transition">
+                <i class="fas fa-skull-crossbones text-red-600 mr-2"></i>Goondas.com
+            </a>
+            <div class="hidden md:flex space-x-6 font-bold uppercase text-sm tracking-widest">
+                <a href="#home" class="hover:text-red-500 transition">Home</a>
+                <a href="#about" class="hover:text-red-500 transition">About Us</a>
+                <a href="#careers" class="hover:text-red-500 transition">Careers</a>
+                <a href="#contact" class="hover:text-red-500 transition">Contact Us</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-zinc-900 p-4 space-y-2 border-b border-red-900">
+            <a href="#home" class="block hover:text-red-500">Home</a>
+            <a href="#about" class="block hover:text-red-500">About Us</a>
+            <a href="#careers" class="block hover:text-red-500">Careers</a>
+            <a href="#contact" class="block hover:text-red-500">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative bg-black py-20 text-center overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            
+            <!-- Logo / Icon Placeholder -->
+            <div class="mb-6 flex justify-center">
+                <!-- REPLACE WITH YOUR LOGO IMAGE: <img src="./images/logo.png" class="h-32 w-auto"> -->
+                <div class="bg-red-600 text-black p-6 rounded-full inline-block">
+                    <i class="fas fa-utensils text-6xl transform rotate-45"></i>
+                    <i class="fas fa-utensils text-6xl transform -rotate-45 -ml-8"></i>
+                </div>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-2">Goondas.com</h1>
+            <p class="text-xl md:text-2xl text-gray-400 tracking-wide brand-font">for all your <span class="text-red-600 italic">kattapanchayatu</span> needs</p>
+        </div>
+    </header>
+
+    <!-- About Us -->
+    <section id="about" class="py-16 bg-zinc-900">
+        <div class="container mx-auto px-4 text-center max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 uppercase border-b-4 border-red-600 inline-block pb-2">About Us</h2>
+            <div class="space-y-6 text-lg leading-relaxed text-gray-300">
+                <p>
+                    Our company was started in <span class="text-white font-bold">1986</span> after the rising demand for rowdyism post the release of <span class="italic text-red-500">Basha & Nayagan</span> in Tamilnadu.
+                </p>
+                <p>
+                    With the internet era, we have expanded our services to the common people. We believe rowdyism should not be for a select few, but accessible by each and every person of this democratic country.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Talent Section -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold uppercase mb-2">Hire from our database</h2>
+                <p class="text-red-500 tracking-widest">1000+ TOP TALENT</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Card 1: David Billa -->
+                <div class="profile-card bg-zinc-900 p-6 rounded-lg border border-zinc-800 hover:border-red-600 transition text-center group">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-zinc-700 group-hover:border-red-600 transition">
+                        <!-- REPLACE THE SRC BELOW WITH YOUR IMAGE (e.g., src="./images/billa.jpg") -->
+                        <img src="https://placehold.co/400x400/1a1a1a/FFF?text=Billa" alt="David Billa" class="w-full h-full object-cover profile-img filter grayscale">
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">David Billa</h3>
+                    <p class="text-xs text-red-500 uppercase tracking-wider mb-4">The Don</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>Intimidation Specialist</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>Wears suits even to Koil</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>Helicopter access</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Anbu -->
+                <div class="profile-card bg-zinc-900 p-6 rounded-lg border border-zinc-800 hover:border-red-600 transition text-center group">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-zinc-700 group-hover:border-red-600 transition">
+                        <!-- REPLACE THE SRC BELOW WITH YOUR IMAGE -->
+                        <img src="https://placehold.co/400x400/1a1a1a/FFF?text=Anbu" alt="Anbu" class="w-full h-full object-cover profile-img filter grayscale">
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Anbu</h3>
+                    <p class="text-xs text-red-500 uppercase tracking-wider mb-4">Local Talent</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>Carrom Player</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>Callsheet deficiency</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>Amma pullai</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>Kaadhuma boyfriend</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Pondi Pandi -->
+                <div class="profile-card bg-zinc-900 p-6 rounded-lg border border-zinc-800 hover:border-red-600 transition text-center group">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-zinc-700 group-hover:border-red-600 transition">
+                        <!-- REPLACE THE SRC BELOW WITH YOUR IMAGE -->
+                        <img src="https://placehold.co/400x400/1a1a1a/FFF?text=Pandi" alt="Pondi Pandi" class="w-full h-full object-cover profile-img filter grayscale">
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Pondi Pandi</h3>
+                    <p class="text-xs text-red-500 uppercase tracking-wider mb-4">Strategist</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>Pesittu irukkumbothu soruviduvan</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>Master of planning sketch</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>12 years+ exp</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Assault Sethu -->
+                <div class="profile-card bg-zinc-900 p-6 rounded-lg border border-zinc-800 hover:border-red-600 transition text-center group">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-zinc-700 group-hover:border-red-600 transition">
+                        <!-- REPLACE THE SRC BELOW WITH YOUR IMAGE -->
+                        <img src="https://placehold.co/400x400/1a1a1a/FFF?text=Sethu" alt="Assault Sethu" class="w-full h-full object-cover profile-img filter grayscale">
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Assault Sethu</h3>
+                    <p class="text-xs text-red-500 uppercase tracking-wider mb-4">Madurai Chapter</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>100+ decibel kolaimerattal</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>Sugar Patient</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i>Acting is passion</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers / Application Form -->
+    <section id="careers" class="py-16 bg-zinc-900 border-t border-zinc-800">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto bg-black border border-zinc-700 rounded-xl p-8 shadow-2xl relative overflow-hidden">
+                <!-- Decorative corner -->
+                <div class="absolute top-0 right-0 w-20 h-20 bg-red-900/20 rounded-bl-full"></div>
+                
+                <h2 class="text-3xl font-bold mb-2">Apply to join us!</h2>
+                <p class="text-gray-400 mb-8">We're always looking for young talent.</p>
+
+                <form onsubmit="handleSubmit(event)" class="space-y-6">
+                    <!-- Alias Field -->
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <label class="w-full md:w-1/3 text-lg font-medium mb-2 md:mb-0">Alias/ Adamozhi</label>
+                        <input type="text" class="custom-input w-full md:w-2/3" placeholder="e.g. Blade Balaji">
+                    </div>
+
+                    <!-- Tools Field -->
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <label class="w-full md:w-1/3 text-lg font-medium mb-2 md:mb-0">Tools Proficient in</label>
+                        <div class="w-full md:w-2/3 flex flex-wrap gap-3">
+                            <!-- Tool Icons -->
+                            <button type="button" onclick="toggleTool(this)" class="tool-btn w-12 h-12 rounded-full border-2 border-gray-500 flex items-center justify-center text-gray-400 hover:border-red-500 hover:text-red-500 transition">
+                                <i class="fas fa-fighter-jet"></i> <!-- Gun placeholder -->
+                            </button>
+                            <button type="button" onclick="toggleTool(this)" class="tool-btn w-12 h-12 rounded-full border-2 border-gray-500 flex items-center justify-center text-gray-400 hover:border-red-500 hover:text-red-500 transition">
+                                <i class="fas fa-utensil-knife"></i> <!-- Knife -->
+                            </button>
+                            <button type="button" onclick="toggleTool(this)" class="tool-btn w-12 h-12 rounded-full border-2 border-gray-500 flex items-center justify-center text-gray-400 hover:border-red-500 hover:text-red-500 transition">
+                                <i class="fas fa-pencil-alt"></i> <!-- Pencil (John Wick style) -->
+                            </button>
+                            <button type="button" onclick="toggleTool(this)" class="tool-btn w-12 h-12 rounded-full border-2 border-gray-500 flex items-center justify-center text-gray-400 hover:border-red-500 hover:text-red-500 transition">
+                                <i class="fas fa-crosshairs"></i> <!-- Sniper -->
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Area Name Field -->
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <label class="w-full md:w-1/3 text-lg font-medium mb-2 md:mb-0">Area Name</label>
+                        <input type="text" class="custom-input w-full md:w-2/3" placeholder="e.g. Royapettah">
+                    </div>
+
+                    <div class="text-right mt-6">
+                        <button type="submit" class="bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-8 rounded-full transition transform hover:scale-105">
+                            SUBMIT APPLICATION
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Section -->
+    <section class="py-12 bg-black text-center">
+        <h3 class="text-gray-500 uppercase tracking-widest text-sm mb-8">Top Alumni Placed at Companies Like</h3>
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70">
+            <div class="text-2xl font-bold font-serif text-purple-400">Doofenshmirtz <span class="text-xs block text-white">Evil Inc.</span></div>
+            <div class="text-2xl font-bold text-green-500 tracking-tighter">OSCORP</div>
+            <div class="text-2xl font-bold text-white"><span class="text-blue-500">G</span><span class="text-red-500">o</span><span class="text-yellow-500">o</span><span class="text-blue-500">g</span><span class="text-green-500">l</span><span class="text-red-500">e</span></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-zinc-950 py-10 border-t border-zinc-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">You don't contact us, <span class="text-red-600">we will contact you.</span></h2>
+            <p class="text-sm text-zinc-500 mb-6">We accept black money.</p>
+            
+            <div class="flex justify-center space-x-6 text-2xl text-zinc-600">
+                <a href="#" class="hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <p class="mt-8 text-xs text-zinc-800">&copy; 2024 Goondas.com. All Rights Reserved. No Police Allowed.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple toggle for the tool buttons in the form
+        function toggleTool(btn) {
+            btn.classList.toggle('selected');
+        }
+
+        // Form Submission Handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert("Application Received! Wait by your window tonight.");
+        }
+    </script>
+</body>
+</html>
